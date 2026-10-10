@@ -27,7 +27,7 @@ University of Rochester
 
 <br>
 
-Code for the model-ladder and depth-scaling experiments of the paper.
+Code for the model-ladder and depth-scaling experiments of the paper. The looped-model and ViT experiments are in our forks of [Parcae](https://github.com/shikhar-srivastava/parcae-layerrope) and [DeiT](https://github.com/shikhar-srivastava/deit-layerrope).
 
 LayerRoPE replaces the per-layer normalization gains with one shared gain $\gamma$ per site (the input and output of the attention and MLP blocks), scaled and rotated by a depth-conditioned complex factor:
 
@@ -38,7 +38,7 @@ r(\ell) = \alpha + \beta \log(\ell + 1), \qquad \theta(\ell, j) = \exp\big(\alph
 \end{gathered}
 ```
 
-where $\odot_c$ multiplies the pairs $(\gamma_{2j}, \gamma_{2j+1})$ as complex numbers. The method is the `LayerRoPE` class in [`peft_pretraining/modeling_llama.py`](peft_pretraining/modeling_llama.py). This repository is built on [LayerNorm-Scaling](https://github.com/lmsdss/LayerNorm-Scaling). The looped-model and ViT experiments are in our forks of [Parcae](https://github.com/shikhar-srivastava/parcae-layerrope) and [DeiT](https://github.com/shikhar-srivastava/deit-layerrope).
+where $\odot_c$ multiplies the pairs $(\gamma_{2j}, \gamma_{2j+1})$ as complex numbers. The method is the `LayerRoPE` class in [`peft_pretraining/modeling_llama.py`](peft_pretraining/modeling_llama.py). This repository is built on [LayerNorm-Scaling](https://github.com/lmsdss/LayerNorm-Scaling). 
 
 ## Setup
 
